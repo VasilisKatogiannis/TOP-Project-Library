@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>TOP Project: Library</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="bookSection">
+                <h1 class="headerTitle">My personal library</h1>
+                <div class="libraryDisplay">
+            
+                </div>
+            </div>
+            <div class="newBookInsert">
+                <button id="openModal">NEW BOOK</button>
+            </div>
+        </div>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modalHead">
+                    <h2>New Book Details</h2>
+                    <span class="close">&times;</span>
+                </div>
+                <form id="newBookForm">
+                    <label for="titleName">Title</label>
+                    <input type="text" id="titleName" name="titleName" required>
+                    <span id="titleError" class="error"></span>
+                    <br>
+                    <label for="authorName">Author</label>
+                    <input type="text" id="authorName" name="authorName" required>
+                    <span id="authorError" class="error"></span>
+                    <br>
+                    <label for="pagesNumber">Pages</label>
+                    <input type="number" id="pagesNumber" name="pagesNumber" min="1" required>
+                    <span id="pagesError" class="error"></span>
+                    <br>
+                    <div class="radioSection">
+                        <label for="read">Read:</label>
+                        <label class="switch">
+                            <input type="checkbox" id="readToggle" name="read">
+                            <span class="slider">
+                                <span class="left">Yes</span>
+                                <span class="right">No</span>
+                            </span>
+                        </label>
+                    </div>
+                    <br>
+                    <div class="buttonsSection">
+                        <button type="submit" class="formButtons">Submit</button>
+                        <button type="reset" class="formButtons">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <script src="./main.js"></script>
+    </body>
+</html>

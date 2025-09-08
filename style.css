@@ -1,0 +1,355 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+.bookSection{
+    background-color: rgb(205, 119, 20);
+    background-size: contain;
+    /* box-shadow: 5px 5px 5px rgb(205, 119, 20); */
+    z-index: 1;
+}
+
+.headerTitle{
+    padding: 2rem 2rem 0 2rem;
+    color: white;
+}
+
+.item{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.libraryDisplay{
+    padding: 2rem;
+    margin: 1rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    color:aliceblue;
+}
+
+.styled {
+    padding: 1rem;
+    background-color: rgba(219, 147, 105, 0.8);
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 4px rgb(103, 89, 0); */
+    line-height: 1.5rem;
+}
+
+.remove {
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-style: none;
+    /* border-radius: 5px; */
+    background-color: rgba(179, 104, 17, 0.8);
+    color: rgb(255, 255, 255);
+    /* box-shadow: 2px 2px 4px rgb(0, 0, 0); */
+}
+
+.remove:hover{
+    cursor: pointer;
+}
+
+.newBookInsert{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(255, 245, 234);
+    padding: 2rem;
+}
+
+button{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-style: none;
+    border-radius: 5px;
+    /* box-shadow: 2px 2px 4px rgb(0, 0, 0); */
+}
+
+#openModal{
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    font-weight: 900;
+    background-color: rgb(205, 119, 20);
+    color:white
+}
+
+#openModal:hover {
+    cursor: pointer;
+}
+
+/* Το overlay (κρύφο από default) */
+.modal {
+    display: none;
+    /* κρυφό αρχικά */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+    background-color: rgba(44, 24, 0, 0.8);
+    /* ημιδιάφανο background */
+}
+
+/* Το περιεχόμενο του modal */
+.modal-content {
+    width: 500px;
+    /* στο κέντρο της σελίδας */
+    margin: 15% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: rgb(205, 119, 20);
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.modalHead{
+    display:flex;
+    justify-content: space-between;
+}
+
+#newBookForm{
+    display: flex;
+    flex-direction: column;
+}
+
+label{
+    font-size: 1.1rem;
+    padding: 0.3rem 0rem;
+}
+
+input{
+    height: 2rem;
+    background-color: rgba(219, 147, 105, 0.8);
+    border-style: none;
+}
+
+input:valid {
+    border: 2px solid black;
+}
+
+/* input:invalid{
+    border: 2px solid red;
+} */
+
+input:invalid:user-invalid{
+    border: 2px solid red;
+}
+
+.radioSection{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.radioSection label:first-child {
+    font-size: 1.1rem;
+    padding: 0.3rem 0rem;
+    min-width: 50px;
+    /* Σταθερό πλάτος για στοίχιση */
+}
+
+/* Ειδικό styling για το switch στο modal */
+.radioSection .switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 80px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+/* Override για το modal switch slider */
+.radioSection .slider {
+    background-color: rgb(255, 255, 255);
+    /* Ταιριάζει με τα form buttons */
+}
+
+.radioSection .slider::before {
+    background-color: rgb(205, 119, 20);
+    /* Λευκό knob για καλύτερη αντίθεση */
+}
+
+input:checked+.radioSection .slider,
+.radioSection input:checked+.slider {
+    background-color: rgb(255, 255, 255);
+    /* Λίγο πιο ανοιχτό όταν είναι checked */
+}
+
+.radioChoices{
+    display: flex;
+    gap: 1.2rem;
+}
+
+.yesno{
+    display: flex;
+    gap: 0.5rem;
+}
+
+.buttonsSection{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    gap:1.5rem;
+}
+
+.formButtons{
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border-style: none;
+    border-radius: 5px;
+    background-color: rgb(168, 100, 27);
+    color:aliceblue;
+}
+
+.formButtons:hover {
+    cursor: pointer;
+}
+
+/* Το κουμπί κλεισίματος */
+.close {
+    color: #000000;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    cursor: pointer;
+}
+
+.error{
+    color:red;
+    font-size: 0.9rem;
+}
+
+input.error{
+    border: 2px solid red;
+}
+
+input.valid{
+    border: 2px solid rgb(255, 255, 255);
+}
+
+.changeRead{
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-style: none;
+    border-radius: 5px;
+}
+
+.read {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    align-items: center;
+    /* κάθετη στοίχιση */
+    gap: 10px;
+    /* κενό ανάμεσά τους */
+    margin: 0.3rem 0;
+        /* Προσθέτουμε λίγο κενό πάνω-κάτω */
+    height: 24px;
+}
+
+.labelL{
+    font-weight: bold;
+    font-size: 1rem;
+    min-width: 40px;
+        /* Σταθερό πλάτος για συνεπή στοίχιση */
+    line-height: 24px;
+        /* Ταιριάζει με το ύψος του switch */
+    margin: 0;
+        /* Αφαιρούμε τυχόν default margins */
+}
+
+
+/* Container του switch */
+.switch {
+    position: relative;
+    display: inline-flex;
+    align-items: center; /* Κεντράρει το switch */
+    width: 80px;
+    height: 24px;
+    flex-shrink: 0; /* Δεν συρρικνώνεται */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+}
+
+/* Διόρθωση για το toggle switch */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(255, 255, 255);
+    border-radius: 34px;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8px; /* Λίγο περισσότερο padding */
+    box-sizing: border-box;
+    font-size: 0.8rem;
+    color: rgb(205, 119, 20); /* Αλλάζουμε το χρώμα για καλύτερη αντίθεση */
+    font-weight: bold;
+}
+
+/* Το κείμενο Yes και No */
+.slider .left,
+.slider .right {
+    z-index: 2; /* Πάνω από το knob */
+    position: relative;
+    pointer-events: none; /* Δεν παρεμβαίνουν στο click */
+}
+
+/* Το knob με μικρότερο μέγεθος */
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 30px; /* Μικρότερο ύψος */
+    width: 30px; /* Μικρότερο πλάτος */
+    background-color: rgb(205, 119, 20);
+    border-radius: 50%;
+    transition: 0.4s;
+    z-index: 1; /* Κάτω από το κείμενο */
+    top: 50%;
+    left: 3px; /* Λίγο μέσα από την άκρη */
+    transform: translateY(-50%);
+}
+
+/* Όταν είναι checked */
+input:checked+.slider::before {
+    left: calc(100% - 30px - 2px); /* Δεξιά θέση με το νέο πλάτος */
+    transform: translateY(-50%);
+}
+
+/* Αλλαγή χρώματος background όταν είναι checked */
+input:checked+.slider {
+    background-color: rgb(255, 255, 255); /* Λίγο πιο ανοιχτό γκρι */
+}
