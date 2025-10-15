@@ -353,3 +353,38 @@ input:checked+.slider::before {
 input:checked+.slider {
     background-color: rgb(255, 255, 255); /* Λίγο πιο ανοιχτό γκρι */
 }
+
+.error {
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.2rem;
+    display: block;
+    min-height: 1.2rem;
+}
+
+input.error {
+    border: 2px solid #ff4444;
+    background-color: #fff0f0;
+}
+
+input.valid {
+    border: 2px solid #00aa00;
+    background-color: #f0fff0;
+}
+
+/* Βελτίωση του modal για καλύτερη εμφάνιση των error messages */
+#newBookForm {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+#newBookForm br {
+    display: none;
+    /* Αφαιρούμε τα <br> για καλύτερο control του spacing */
+}
+
+#newBookForm label {
+    margin-top: 0.5rem;
+}
